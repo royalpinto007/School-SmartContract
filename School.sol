@@ -1,4 +1,5 @@
-pragma solidity ^0.6.6;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.0 < 0.9.0;
   
 contract School
 {
@@ -34,7 +35,7 @@ contract School
    
     mapping (address => uint) pendingWithdraws;
 
-
+    function addNewRecords(int256 _rollNumber,int256 _regnumber,string memory _fName,string memory _lName,string memory _dob, int256 _marks) public 
     {
         
         stdCount = stdCount + 1;  	// to fetch details of students, I have used count since i didnt understand how to do it using regnumber)
@@ -52,12 +53,7 @@ contract School
         owner = msg.sender;
     }
     
-    function addNewRecords(int256 _rollNumber,
-			   int256 _regnumber,
-                          string memory _fName,
-                          string memory _lName,
-			  string memory _dob, 
-                          int256 _marks) public 
+
 		  
     function becomeRichest() payable returns (bool){
         require(msg.value > mostSent);
@@ -74,4 +70,5 @@ contract School
         require(amount < this.balance);
         owner.transfer(amount);
         return true;
+    }
 }
